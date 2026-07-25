@@ -1,0 +1,216 @@
+# Composition · readme-realign
+# ================================================================
+# Realign loa-laplas's README with the territory after the
+# enforcement-lattice cycles (PR #43 Observatory graduation, PR #44
+# Laplas + Poteau). The repo "became its description" — Master of
+# Ceremonies that compiles compositions into runnable, GATED agentic
+# workflows — but README.md still preaches the OLD gospel
+# (construct-rooms-substrate, Form C, observability-FIRST: "the hook
+# LOGS violations, it does not BLOCK"). The new approach INVERTS that
+# central line: poteau is Claude Code hooks as LAW, deterministic,
+# outside the context window.
+#
+# The map is not the territory. Each room VERIFIES its slice against
+# the cloned repo + the merged PRs before it writes a word.
+#
+# Authored 2026-06-13 from the loa-freeside operator seat (embodying
+# gecko + gygax + the-arcade). Discovery → delivery, cut at one seam
+# (the brief): the README is the front door + an identity reframe, so
+# it earns an operator gate before the full write.
+# ================================================================
+
+schema_version: "1.5"
+kind: workflow
+name: readme-realign
+description: >
+  Rewrite an outdated repository README to match its merged-PR
+  territory. Ground in the artifacts (gecko), extract the house voice
+  + diagram grammar from sibling repos (herald + gygax), synthesize a
+  concrete README brief gated by the operator, then render the new
+  README from the approved brief.
+
+intent: >
+  "loa-laplas (né construct-rooms-substrate) became the Master of
+   Ceremonies for the Loa engine — a Vodou-named agentic-TTRPG
+   enforcement engine: Laplas (the three preparations: quest/party/
+   dungeon manifests → ready receipt), Poteau (the center post:
+   hook-lattice enforcement + ed25519 council, deterministic, outside
+   the context window), Legba (the custody chain: gate tokens +
+   external anchoring), the Observatory (the playable RPG-map design
+   instrument, live on Vercel), and Modules (compositions as adventure
+   modules). README.md still describes the old rooms-substrate. Bring
+   the front door up to the territory in the house voice, with a
+   gygax-grammar diagram."
+
+backend: headless-tmux
+
+hivemind_labels:
+  product_area: "Docs — front-door README realignment to merged territory"
+  workstream: discovery
+  priority: high
+  jtbd:
+    category: personal
+    description: "Make It Match Reality — the README is the repo's first contract; drift here misleads every reader and agent"
+  source: team-internal
+
+inputs:
+  - type: Artifact
+    name: repo_path
+    description: "Absolute path to the cloned loa-laplas repo (/Users/zksoju/bonfire/loa-laplas)"
+    required: true
+  - type: Artifact
+    name: current_readme
+    description: "The README being replaced (/Users/zksoju/bonfire/loa-laplas/README.md)"
+    required: true
+  - type: Operator-Model
+    name: operator_context
+    required: false
+
+chain:
+  - stage: 1
+    name: ground
+    construct: gecko
+    skill: diagnose
+    persona: GECKO
+    mode: fresh
+    reads: [Artifact, Intent]
+    writes: [Artifact, Signal]
+    role: primary
+    notes: >
+      GECKO lens: diagnose the drift between the declared README and the
+      real territory, then synthesize the new-approach canon. Read FOR REAL
+      (map ≠ territory): /Users/zksoju/bonfire/loa-laplas/{laplas,poteau,
+      observatory,modules}/README.md + observatory/ORIENTATION.md +
+      scripts/legba/README.md + construct.yaml + README.md, and
+      `gh pr view 43`/`gh pr view 44 --repo 0xHoneyJar/loa-laplas`.
+      Produce (as an Artifact + a Signal): (1) the new IDENTITY (repo desc =
+      "Master of ceremonies for the Loa engine — compiles compositions into
+      runnable, gated agentic workflows"; construct.yaml still says
+      construct-rooms-substrate v0.3.0 — flag this as a SEPARATE drift, do not
+      assume the README rename implies a manifest rename). (2) A
+      section-by-section DRIFT MAP: each claim in the current README that is
+      now false/incomplete → the new truth. The headline: old thesis =
+      observability-FIRST ("logs, does not block"); new thesis = ENFORCEMENT
+      ("hooks as law, deterministic, outside the context window", exit-2 deny /
+      Stop-block / loop guard / ed25519 chained receipts / fail-closed council).
+      (3) The Vodou ↔ TTRPG glossary grounded in the component READMEs:
+      Laplas=La Place/MC/three preparations, Poteau=poteau-mitan/center post/
+      enforcement, Legba=Papa Legba/gatekeeper/custody chain, room=span,
+      seam=corridor, gate=door+key (verdict/ed25519 token), construct=character,
+      party=the agents, council=the judges, Observatory=watching the game
+      played. Tag every claim observed (saw it in a file) vs inferred.
+
+  - stage: 2
+    name: voice
+    construct: herald
+    skill: extract-voice-profile
+    persona: HERALD
+    mode: fresh
+    reads: [Artifact]
+    writes: [Artifact]
+    role: cross-reference
+    notes: >
+      Extract the HOUSE VOICE so the new README reads like it belongs.
+      Sources (fetch via `gh api repos/0xHoneyJar/<r>/contents/README.md
+      --jq .content | base64 -d`): 0xHoneyJar/loa and 0xHoneyJar/loa-constructs.
+      Capture: the AGENT-CONTEXT HTML-comment header pattern (machine-readable
+      summary at top), the badge row, the evocative epigraph quote, the
+      "What Is This? / Why <name>?" naming-lineage move (Gibson/Vodou — note
+      loa-laplas is DEEP in that lineage already: Laplas/Poteau/Legba are all
+      Vodou), the problem→solution "Why" framing, table-driven command/
+      component surfaces, bold lead-ins on bullets, and the cluster's
+      signature HONEST-GAPS / trade-offs section (the current README's
+      "Trade-offs (the honest version)" + "Boundaries (what this is NOT)" are
+      house style — preserve them). Output an Artifact voice profile: sentence
+      rhythm, header conventions, the must-keep idioms, and 2-3 anti-patterns
+      to avoid (no AI-stench: em-dash-as-crutch, "not X, it's Y", delve/realm).
+
+  - stage: 3
+    name: diagram
+    construct: gygax
+    skill: homebrew
+    persona: GYGAX
+    mode: fresh
+    reads: [Artifact]
+    writes: [Artifact]
+    role: cross-reference
+    notes: >
+      Design the README's headline DIAGRAM in your own house grammar (you
+      authored the construct-gygax diagrams; they are the canonical reference).
+      Study `gh api repos/0xHoneyJar/construct-gygax/contents/README.md` for
+      the convention: mermaid `graph LR`/`graph TD`, subgraphs grouping the
+      layers, italic <i> sublabels under node names, edge labels naming what
+      flows, and the THJ dark palette (fill:#1a1a2e; stroke:#533483 purple=
+      state/operator, #16c79a teal=process, #e94560 red=enforcement/engine;
+      color:#e0e0e0). Render the enforcement lattice as a playable table:
+      operator/composition → LAPLAS (three preparations quest/party/dungeon →
+      ready receipt binding three hashes) → the party of constructs enters
+      rooms → POTEAU center post enforces every prompt/tool/exit deterministically
+      → gates judged by the COUNCIL (ed25519, fail-closed) → LEGBA custody chain
+      (gate tokens, chained receipts, external anchor) → the OBSERVATORY renders
+      the run as an RPG map. Output (Artifact): one primary mermaid block (the
+      lattice), and optionally a second `graph TD` for the single-run flow
+      (prepare → enter → enforce → judge → chain → observe). Verify every node
+      names a thing that actually exists in the repo.
+
+  - stage: 4
+    name: brief
+    construct: the-arcade
+    skill: progressive-disclosure
+    persona: OSTROM
+    mode: blocking
+    reads: [Artifact, Signal]
+    writes: [Verdict, Artifact]
+    role: gate
+    notes: >
+      SEAM. Synthesize the three research handoffs into a concrete README
+      BRIEF the operator approves before any full write. OSTROM systems lens +
+      BARTH progressive disclosure: the README must teach the lattice in the
+      order a newcomer needs it (what it IS → why the name → the one diagram →
+      how a run flows → the components table → boundaries/honest-gaps → how to
+      use). Produce (Artifact brief + Verdict ready/not): (1) proposed H1 +
+      one-line tagline + epigraph, (2) the badge set, (3) a section-by-section
+      OUTLINE with a one-line purpose each, (4) the chosen headline diagram
+      inline, (5) the Vodou↔TTRPG glossary table, (6) the explicit list of OLD
+      claims being RETIRED (so the operator sees what's being cut), (7) open
+      questions for the operator (e.g. should construct.yaml's stale slug be
+      flagged in the README "status" section or left to a separate cycle). Keep
+      it skimmable. Surface primary_uncertainty + a specific operator_check.
+
+  - stage: 5
+    name: render
+    construct: the-arcade
+    skill: progressive-disclosure
+    persona: BARTH
+    mode: fresh
+    reads: [Artifact, Verdict]
+    writes: [Artifact]
+    role: primary
+    notes: >
+      Render the full README.md from the APPROVED brief — house voice, gygax
+      diagram inline, every claim grounded in a real file/PR. Preserve the
+      cluster's honest-gaps discipline (Boundaries / Trade-offs / Status &
+      origin). Do NOT invent capabilities; if the brief flags the construct.yaml
+      slug drift, say so honestly in Status. Return the COMPLETE markdown as the
+      handoff (you are read-only; the executor persists it to the clone and
+      shows the operator before any commit). No AI-stench. The README should
+      make a first-time reader understand, in order: this is the Loa engine's
+      Master of Ceremonies; it compiles compositions (adventure modules) into
+      runnable, ENFORCED workflows; the law is the poteau hook-lattice; the
+      custody chain is Legba; you watch it played in the Observatory.
+
+outputs:
+  - type: Artifact
+    destination: "/Users/zksoju/bonfire/loa-laplas/README.md"
+    description: The realigned README.md content (executor persists after operator review).
+  - type: Artifact
+    destination: ".run/compose/<run_id>/readme-brief.md"
+    description: The gated README brief (identity, section map, diagram, glossary, retired-claims).
+
+when_to_use: >
+  When a repo's README has drifted from its merged-PR reality and needs a
+  voice-consistent, diagram-bearing rewrite grounded in the actual artifacts.
+
+operator_note: >
+  Single seam at the brief (stage 4). cap_reached at the seam is a real gate,
+  never folded into converged. Render is read-only → executor writes the file.
